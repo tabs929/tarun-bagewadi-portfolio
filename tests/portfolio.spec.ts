@@ -29,6 +29,19 @@ test("homepage navigation and all case-study routes work without client errors",
   expect(errors).toEqual([]);
 });
 
+test("homepage follows the recruiter journey and shows actual employment", async ({ page }) => {
+  await page.goto("/");
+  expect(await page.locator("main > section").evaluateAll(sections => sections.map(section => section.id || "hero"))).toEqual(["hero", "about", "experience", "work", "philosophy", "contact"]);
+  await expect(page.getByRole("navigation", { name: "Main navigation" }).getByRole("link")).toHaveText(["About", "Experience", "Work"]);
+  const experience = page.locator("#experience");
+  await expect(experience.getByRole("heading", { name: "Software Engineer", exact: true })).toBeVisible();
+  await expect(experience.getByRole("heading", { name: "Software Engineer Intern", exact: true })).toBeVisible();
+  await expect(experience.locator("time")).toHaveText(["Jun 2022", "Jan 2024", "Jan 2022", "Jun 2022"]);
+  await expect(experience.locator(".career-company")).toHaveText(["Persistent Systems", "Persistent Systems"]);
+  await expect(experience.locator(".career-impact")).toContainText("50+");
+  await expect(experience).not.toContainText("Independent projects");
+});
+
 test("mobile navigation works with touch, keyboard, and Escape", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");

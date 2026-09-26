@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const navigation = [{ label: "Work", id: "work" }, { label: "Experience", id: "experience" }, { label: "About", id: "about" }];
+const navigation = [{ label: "About", id: "about" }, { label: "Experience", id: "experience" }, { label: "Work", id: "work" }];
 
 export function Header() {
   const [open, setOpen] = useState(false);

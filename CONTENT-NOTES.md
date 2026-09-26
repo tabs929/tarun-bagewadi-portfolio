@@ -13,7 +13,7 @@ The supplied brief approves a dark premium direction and names four projects. Th
 ## Useful future updates
 
 1. Confirm individual contributions for collaborative/course projects.
-2. Supply employment history and dates to replace or supplement the project-based experience section.
+2. Employment history is supplied directly by Tarun: Persistent Systems Software Engineer (Jun 2022–Jan 2024) and Software Engineer Intern (Jan–Jun 2022). The 50+ companies figure refers specifically to adoption of the version-control integration module.
 3. Confirm the preferred public email; add a verified LinkedIn URL and résumé when available.
 4. Provide the original approved mock for a direct visual comparison.
 5. Add measured results only with context, a source, and the relevant limitations.
