@@ -7,4 +7,5 @@ out/
 *.tsbuildinfo
 playwright-report/
 test-results/
+preview-artifacts/
 .DS_Store
