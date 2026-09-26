@@ -21,6 +21,7 @@ test("homepage navigation and all case-study routes work without client errors",
     await page.getByRole("link", { name: `Read ${route.name} case study` }).click();
     await expect(page).toHaveURL(`/work/${route.slug}`);
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(`${route.name}.`);
+    await expect(page.getByRole("heading", { level: 1 })).toBeInViewport();
     await expect(page).toHaveTitle(`${route.name} — Tarun Bagewadi`);
     await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /.+/);
     await page.getByRole("link", { name: "Selected work", exact: true }).click();
